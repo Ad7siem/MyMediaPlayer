@@ -47,6 +47,19 @@ namespace MyMediaPlayer
         {
             mediaElement.Stop();
         }
+
+        private void btnWybierzPlik_Click(object sender, RoutedEventArgs e)
+        {
+            Microsoft.Win32.OpenFileDialog openFileDialog = new Microsoft.Win32.OpenFileDialog();
+            openFileDialog.DefaultExt = "avi";
+            bool? wynik = openFileDialog.ShowDialog();
+            if(wynik.HasValue && wynik.Value)
+            {
+                mediaElement.Source = new Uri(openFileDialog.FileName, UriKind.Absolute);
+                mediaElement.Play();
+            }
+        }
         #endregion
+
     }
 }

@@ -17,11 +17,13 @@
         <StackPanel Grid.Row="1" Margin="0,0,0,10">
             <Label x:Name="lbOpis" Content="---" Margin="5" HorizontalAlignment="Center" />
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
-                <Button Content="Odtwarzaj" Margin="0,0,10,0"
+                <Button Content="Wybierz plik" Margin="0,0,10,0"
+                        Click="btnWybierzPlik_Click" />
+                <Button Content="Odtwarzaj" Margin="0,0,10,0" 
                         Click="btnOdtwarzaj_Click" />
                 <Button Content="Wstrzymaj" Margin=" 0,0,10,0"
                         Click="btnWstrzymaj_Click" />
-                <Button Content="Zatrzymaj" Margin="0,0,0,0"
+                <Button Content="Zatrzymaj" Margin="0,0,10,0"
                         Click="btnZatrzymaj_Click" />
             </StackPanel>
         </StackPanel>

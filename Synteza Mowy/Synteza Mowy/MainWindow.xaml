@@ -1,0 +1,55 @@
+﻿<Window x:Class="Synteza_Mowy.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Synteza_Mowy"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" MinHeight="450" MaxHeight="450" Width="800" MinWidth="800" MaxWidth="800">
+    <StackPanel Orientation="Horizontal">
+        <StackPanel Orientation="Vertical" Margin="10,10,10,10" Height="400" Width="400">
+            <TextBlock HorizontalAlignment="Center" FontSize="12">
+                Język
+            </TextBlock>
+            <ComboBox x:Name="glos" Margin="10,5,10,10" />
+            <TextBlock HorizontalAlignment="Center" FontSize="12">
+                Głośność
+            </TextBlock>
+            <Slider x:Name="glosnosc" Margin="10,0,10,10"
+                Minimum="0" Maximum="100" Value="75" />
+            <TextBlock HorizontalAlignment="Center" FontSize="12">
+                Tempo mowy
+            </TextBlock>
+            <Slider x:Name="szybkosc" Margin="10,0,10,10"
+                Minimum="-10" Maximum="10" Value="0" />
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <StackPanel Orientation="Vertical" Width="200">
+                    <Button Content="Czytaj" Margin="10,10,10,5" Click="Czytaj_Click" Height="50" Width="150" />
+                </StackPanel>
+                <StackPanel Orientation="Vertical">
+                    <Button Content="Resetuj tempo mowy" Click="Button_Click_1" HorizontalAlignment="Right" Width="150" Margin="10,10,10,0" />
+                    <Button Content="Resetuj głośnośc" Click="Button_Click_2" HorizontalAlignment="Right" Width="150" Margin="10,10,10, 0"  />
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Width="400" Height="100">
+                <StackPanel Orientation="Vertical" Width="200">
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Width="200">
+                    <Button Content="Wczytaj plik" VerticalAlignment="Bottom" Margin="0,30,0,5" Width="100" HorizontalAlignment="Center" Click="OtworzPlik_Click"/>
+                    <TextBlock x:Name="statusBarText" Text="[Brak Pliku]" HorizontalAlignment="Center"  Margin="0,5,0,10" TextWrapping="Wrap"/>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel>
+            <Separator />
+        </StackPanel>
+        <StackPanel Width="350" Margin="10,10,10,10">
+            <TextBox x:Name="tekst" Margin="0,10,10,10" Height="380"
+                     Text="Uniwersytet Mikołaja Kopernika w Toruniu"
+                     AcceptsReturn="True" 
+                     ScrollViewer.VerticalScrollBarVisibility="Visible"
+                     TextWrapping="Wrap"
+                     SpellCheck.IsEnabled="True" Language="pl-PL" />
+        </StackPanel>
+    </StackPanel>
+</Window>
